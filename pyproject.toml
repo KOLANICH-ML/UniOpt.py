@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "wheel", "setuptools_scm[toml]>=3.4.3",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "UniOpt"
+description = "A wrapper for popular black box optimization libraries providing unified interface"
+readme = "ReadMe.md"
+keywords = ["hyperparameter optimization", "black box optimization"]
+license = {text = "Unlicense"}
+classifiers = [
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	#"License :: Public Domain :: Unlicense",
+	"Operating System :: OS Independent",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	#"Topic :: Science",
+]
+requires-python = ">=3.4"
+dependencies = [
+	"numpy",
+	"scipy",
+	"scikit_learn",
+	"lazy_object_proxy",
+	"lazily", # @ git+https://codeberg.org/KOLANICH-libs/lazily.py.git
+]
+authors = [
+	{ name = "KOLANICH" },
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+tqdmprogressreporter = [
+	"tqdm", # @ git+https://github.com/tqdm/tqdm.git"
+]
+hyperopt = [
+	"hyperopt", # @ git+https://github.com/hyperopt/hyperopt.git"
+]
+hyperband = ["hyperband"]
+hyperengine = [
+	"hyperengine", # @ git+https://github.com/maxim5/hyper-engine.git"
+]
+gpyopt = [
+	"GPyOpt", # @ git+https://github.com/SheffieldML/GPyOpt.git"
+]
+skopt = [
+	"scikit-optimize", # @ git+https://github.com/scikit-optimize/scikit-optimize.git"
+]
+smac = [
+	"smac", # @ git+https://github.com/automl/SMAC3.git"
+]
+beecolony = [
+	"ecabc", # @ git+https://github.com/ECRL/ecabc.git"
+]
+optunity = [
+	"optunity", # @ git+https://github.com/claesenm/optunity.git"
+]
+yabox = [
+	"yabox", # @ git+https://github.com/pablormier/yabox.git"
+]
+pyshac = [
+	"pyshac", # @ git+https://github.com/titu1994/pyshac.git"
+]
+rbfopt = [
+	"rbfopt", # @ git+https://github.com/coin-or/rbfopt.git"
+]
+bayessian = [
+	"bayesian_optimization", # @ git+https://github.com/fmfn/BayesianOptimization.git"
+]
+sopt = [
+	"sopt", # @ git+https://github.com/Lyrichu/sopt.git@43cfc8fe39d5d05ad01db626dd777e4ce3e8d14e"
+]
+pysot = [
+	"pySOT", # @ git+https://github.com/dme65/pySOT.git
+]
+baytune = [
+	"baytune", # @ git+https://github.com/HDI-Project/BTB.git
+]
+robo = [
+	"RoBO", # @ git+https://github.com/KOLANICH/RoBO.git@optional_pybnn
+]
+evostra = [
+	"evostra", # @ git+https://github.com/alirezamika/evostra.git
+]
+
+[project.urls]
+Homepage = "https://codeberg.org/KOLANICH-ML/UniOpt.py"
+
+[tool.setuptools]
+zip-safe = true
+packages = ["UniOpt", "UniOpt.core", "UniOpt.backends"]
+
+[tool.setuptools_scm]
